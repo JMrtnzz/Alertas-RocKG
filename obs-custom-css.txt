@@ -1,0 +1,12 @@
+/* Pegar en OBS → Browser Source → Propiedades → CSS personalizado */
+
+html, body {
+  background: rgba(0, 0, 0, 0) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body > * {
+  background: transparent !important;
+}
