@@ -1,0 +1,18 @@
+RocKG — Variante KICKs ≥ 2000
+================================
+
+Botrix → Settings → Alerts → KICKs → Variante
+
+Condición: amount >= 2000
+
+IMPORTANTE (para que se vea igual que el preview):
+  1. Html → pegar html.html COMPLETO (incluye <link> de fuente)
+  2. CSS  → pegar css.css en el campo CSS (no en Html)
+  3. JS   → pegar js.js en el campo JavaScript
+  4. Campo de texto del panel → VACÍO o solo "-" (si pones "500 KICKS" sale debajo de la imagen)
+  5. Acepta el aviso de seguridad del custom code antes de guardar
+  6. NO importes/exportes JSON — edita solo Custom Code en cada variante
+
+OBS Browser Source: 800×200 + obs-custom-css.txt
+
+Preview local: preview.html

@@ -1,4 +1,7 @@
 (function () {
+  var MEDIA = 132;
+  var IMG = 88;
+
   document.documentElement.style.background = 'transparent';
   document.body.style.background = 'transparent';
 
@@ -98,14 +101,14 @@
     if (media) {
       media.style.setProperty('float', 'none', 'important');
       media.style.setProperty('clear', 'none', 'important');
-      media.style.width = '110px';
-      media.style.height = '110px';
+      media.style.width = MEDIA + 'px';
+      media.style.height = MEDIA + 'px';
       media.style.setProperty('flex-shrink', '0', 'important');
     }
     if (alertMedia) {
       alertMedia.style.setProperty('float', 'none', 'important');
-      alertMedia.style.width = '110px';
-      alertMedia.style.height = '110px';
+      alertMedia.style.width = MEDIA + 'px';
+      alertMedia.style.height = MEDIA + 'px';
     }
     if (text) {
       text.style.setProperty('float', 'none', 'important');
@@ -118,10 +121,10 @@
     imgs.forEach(function (img) {
       img.removeAttribute('width');
       img.removeAttribute('height');
-      img.style.setProperty('width', '72px', 'important');
-      img.style.setProperty('height', '72px', 'important');
-      img.style.setProperty('max-width', '72px', 'important');
-      img.style.setProperty('max-height', '72px', 'important');
+      img.style.setProperty('width', IMG + 'px', 'important');
+      img.style.setProperty('height', IMG + 'px', 'important');
+      img.style.setProperty('max-width', IMG + 'px', 'important');
+      img.style.setProperty('max-height', IMG + 'px', 'important');
       img.style.setProperty('object-fit', 'contain', 'important');
       img.style.setProperty('object-position', 'center', 'important');
       img.style.setProperty('float', 'none', 'important');

@@ -57,7 +57,25 @@ El código está organizado para que puedas:
 | Sub regalada | [`botrix/gift/`](botrix/gift/) | ¡REGALÓ SUBS! | `{name}`, `{amount}`, `{message}` |
 | Host | [`botrix/host/`](botrix/host/) | ¡NUEVO HOST! | `{name}`, `{amount}` |
 | Propina | [`botrix/tip/`](botrix/tip/) | ¡DONACIÓN! | `{name}`, `{amount}`, `{message}` |
-| KICKs | [`botrix/kicks/`](botrix/kicks/) | ¡KICKS RECIBIDOS! | `{name}`, `{amount}` |
+| KICKs (base) | [`botrix/kicks/`](botrix/kicks/) | ¡KICKS RECIBIDOS! | `{name}`, `{amount}` |
+| KICKs tiers | [`botrix/kicks/variants/`](botrix/kicks/variants/) | 500 · 1K · 2K · 5K · 10K · 50K | Ver tabla de tiers abajo |
+
+### Variantes KICKs por cantidad
+
+Carpetas listas para pegar **una por variante** en Botrix (`amount >= …`):
+
+| Tier | Carpeta | Condición | Visual |
+|------|---------|-----------|--------|
+| 500 | [`variants/500/`](botrix/kicks/variants/500/) | `amount >= 500` | Glow rojo reforzado |
+| 1,000 | [`variants/1000/`](botrix/kicks/variants/1000/) | `amount >= 1000` | Badge HOT + dorado |
+| 2,000 | [`variants/2000/`](botrix/kicks/variants/2000/) | `amount >= 2000` | Badge FIRE + borde grueso |
+| 5,000 | [`variants/5000/`](botrix/kicks/variants/5000/) | `amount >= 5000` | Badge MEGA + chispas |
+| 10,000 | [`variants/10000/`](botrix/kicks/variants/10000/) | `amount >= 10000` | Badge ULTRA + shake |
+| 50,000 | [`variants/50000/`](botrix/kicks/variants/50000/) | `amount >= 50000` | LEGENDARY — máximo impacto |
+
+Preview de todos los tiers: [`previews/kicks-tiers.html`](previews/kicks-tiers.html)
+
+**En Botrix:** crea 6 variantes en la pestaña KICKs, ordénalas de mayor a menor (50000 arriba) y pega el custom code de cada carpeta en su variante. La carpeta [`botrix/kicks/`](botrix/kicks/) queda para cantidades menores a 500.
 
 Cada carpeta contiene:
 
@@ -97,10 +115,12 @@ Alertas-RocKG/
 ├── botrix/                    # Código de producción para Botrix
 │   ├── follow/  sub/  gift/
 │   ├── host/    tip/   kicks/
+│   │   └── variants/          # Tiers 500–50K (una carpeta = una variante Botrix)
 │   └── *.html                 # Referencia combinada por tipo
 │
 ├── previews/                  # Galería local sin Botrix
 │   ├── todas-las-alertas.html
+│   ├── kicks-tiers.html       # Galería de tiers KICKs
 │   ├── preview-theme.css      # Tema de la galería
 │   └── preview-helper.js      # Botón "Reproducir" en previews
 │
@@ -296,6 +316,7 @@ Haz fork, edita y repite la instalación pestaña por pestaña.
 | Alerta recortada | Aumenta el Browser Source a mínimo 800×200 |
 | Fuente incorrecta | Si Google Fonts no carga, el fallback es Arial Black |
 | Cambios no se reflejan | Exporta la alerta en Botrix y actualiza la fuente OBS |
+| Tiers KICKs no se ve igual que preview | Campo de texto del panel **vacío**; pega html/css/js nuevos; el "500 KICKS" debajo de la imagen es texto del panel |
 
 ---
 

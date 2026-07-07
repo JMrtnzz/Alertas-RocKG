@@ -354,3 +354,156 @@ html, body {
   60%  { transform: scale(1.12); }
   to   { opacity: 1; transform: scale(1); }
 }
+
+/* --- Reset panel Botrix --- */
+.container.rockg-alert[class*="image"] .alert-media-container,
+.container.rockg-alert[class*="image"] .alert-text-container,
+.container.rockg-alert.image-left .alert-media-container,
+.container.rockg-alert.image-left .alert-text-container {
+  float: none !important;
+  clear: none !important;
+}
+
+.container.rockg-alert .alert-text-container {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.container.rockg-alert .rockg-frame {
+  flex-wrap: nowrap !important;
+}
+
+.container.rockg-alert .rockg-amount {
+  clear: none !important;
+  float: none !important;
+  width: auto !important;
+}
+
+.container.rockg-alert #line1:not(.rockg-line1),
+.container.rockg-alert #line2:not(.rockg-line2),
+.container.rockg-alert .alert-media-container > :not(.alert-media):not(.rockg-media) {
+  display: none !important;
+}
+
+.container.rockg-alert #alert-message h3.rockg-line1,
+.container.rockg-alert #alert-message .rockg-line2,
+.container.rockg-alert #alert-message .rockg-tag,
+.container.rockg-alert #alert-message .rockg-tier-badge,
+.container.rockg-alert #alert-message .rockg-amount {
+  font-family: 'Montserrat', 'Arial Black', sans-serif !important;
+  background: transparent !important;
+  border: none !important;
+  float: none !important;
+  clear: none !important;
+}
+
+.container.rockg-alert .alert-media-container img,
+.container.rockg-alert .alert-media img {
+  float: none !important;
+  position: static !important;
+}
+
+/* --- Tier 10000 RocKG --- */
+.container.rockg-alert--kicks-10000 .rockg-frame {
+  max-width: 620px !important;
+  border: 3px solid #FFCC00 !important;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)) !important;
+  box-shadow: 0 0 60px rgba(255, 200, 0, 0.48), inset 0 0 30px rgba(255, 0, 0, 0.03) !important;
+  animation: rockgKicksFrameIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, rockgBorderPulseTier10000 2s ease-in-out 0.65s infinite !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-frame::before {
+  width: 6px !important;
+  background: linear-gradient(180deg, #FF0000, #FFCC00) !important;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.95) !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-frame::after {
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 215, 0, 0.16) 45%, transparent 90%) !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-media {
+  width: 132px !important;
+  height: 132px !important;
+  min-width: 132px !important;
+  max-width: 132px !important;
+}
+.container.rockg-alert--kicks-10000 .alert-media {
+  width: 132px !important;
+  height: 132px !important;
+  border-color: #FFCC00 !important;
+  box-shadow: 0 0 33px rgba(255, 200, 0, 0.48) !important;
+}
+.container.rockg-alert--kicks-10000 .alert-media img,
+.container.rockg-alert--kicks-10000 .rockg-media img {
+  width: 88px !important;
+  height: 88px !important;
+  min-width: 88px !important;
+  min-height: 88px !important;
+  max-width: 88px !important;
+  max-height: 88px !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-tag { color: #FFCC00 !important; }
+.container.rockg-alert--kicks-10000 .rockg-line1 {
+  font-size: 22px !important;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.3) !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-line2 {
+  font-size: 32px !important;
+  color: #FFCC00 !important;
+  text-shadow: 0 0 45px rgba(255, 215, 0, 0.95) !important;
+  animation: rockgNameIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.42s both, rockgNameGlow 2s ease-in-out 1s infinite, rockgShake 0.55s ease-in-out 1.2s infinite !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-amount-num {
+  font-size: 44px !important;
+  color: #FFD700 !important;
+  text-shadow: 0 0 35px rgba(255, 215, 0, 0.95) !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-amount-label {
+  font-size: 16px !important;
+  color: #FFCC00 !important;
+}
+@keyframes rockgBorderPulseTier10000 {
+  0%, 100% { box-shadow: 0 0 42px rgba(255, 200, 0, 0.48), inset 0 0 0 rgba(255, 0, 0, 0); }
+  50%      { box-shadow: 0 0 84px rgba(255, 215, 0, 0.95), inset 0 0 22px rgba(255, 215, 0, 0.08); }
+}
+
+.container.rockg-alert--kicks-10000 .rockg-tier-badge {
+  display: inline-block !important;
+  align-self: flex-start !important;
+  margin: 0 0 2px 0 !important;
+  padding: 2px 8px !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  font-style: italic !important;
+  letter-spacing: 1.5px !important;
+  color: #FFD700 !important;
+  background: rgba(255, 215, 0, 0.12) !important;
+  border: 1px solid #FFD700 !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 17px rgba(255, 215, 0, 0.45) !important;
+  animation: rockgTagIn 0.5s ease-out 0.15s both !important;
+}
+
+.container.rockg-alert--kicks-10000 .rockg-sparks {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: 2 !important;
+}
+.container.rockg-alert--kicks-10000 .rockg-sparks::before,
+.container.rockg-alert--kicks-10000 .rockg-sparks::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+  animation: rockgSparkFloat 2.2s ease-in-out infinite;
+}
+.container.rockg-alert--kicks-10000 .rockg-sparks::before { top: 18%; right: 12%; }
+.container.rockg-alert--kicks-10000 .rockg-sparks::after { bottom: 22%; right: 28%; width: 4px; height: 4px; animation-delay: 0.9s; }
+@keyframes rockgSparkFloat {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50%      { opacity: 1; transform: translateY(-8px) scale(1.3); }
+}

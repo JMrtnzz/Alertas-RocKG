@@ -354,3 +354,114 @@ html, body {
   60%  { transform: scale(1.12); }
   to   { opacity: 1; transform: scale(1); }
 }
+
+/* --- Reset panel Botrix --- */
+.container.rockg-alert[class*="image"] .alert-media-container,
+.container.rockg-alert[class*="image"] .alert-text-container,
+.container.rockg-alert.image-left .alert-media-container,
+.container.rockg-alert.image-left .alert-text-container {
+  float: none !important;
+  clear: none !important;
+}
+
+.container.rockg-alert .alert-text-container {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.container.rockg-alert .rockg-frame {
+  flex-wrap: nowrap !important;
+}
+
+.container.rockg-alert .rockg-amount {
+  clear: none !important;
+  float: none !important;
+  width: auto !important;
+}
+
+.container.rockg-alert #line1:not(.rockg-line1),
+.container.rockg-alert #line2:not(.rockg-line2),
+.container.rockg-alert .alert-media-container > :not(.alert-media):not(.rockg-media) {
+  display: none !important;
+}
+
+.container.rockg-alert #alert-message h3.rockg-line1,
+.container.rockg-alert #alert-message .rockg-line2,
+.container.rockg-alert #alert-message .rockg-tag,
+.container.rockg-alert #alert-message .rockg-tier-badge,
+.container.rockg-alert #alert-message .rockg-amount {
+  font-family: 'Montserrat', 'Arial Black', sans-serif !important;
+  background: transparent !important;
+  border: none !important;
+  float: none !important;
+  clear: none !important;
+}
+
+.container.rockg-alert .alert-media-container img,
+.container.rockg-alert .alert-media img {
+  float: none !important;
+  position: static !important;
+}
+
+/* --- Tier 500 RocKG --- */
+.container.rockg-alert--kicks-500 .rockg-frame {
+  max-width: 560px !important;
+  border: 2px solid #FF0000 !important;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)) !important;
+  box-shadow: 0 0 26px rgba(255, 0, 0, 0.35), inset 0 0 30px rgba(255, 0, 0, 0.03) !important;
+  animation: rockgKicksFrameIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, rockgBorderPulseTier500 2s ease-in-out 0.65s infinite !important;
+}
+.container.rockg-alert--kicks-500 .rockg-frame::before {
+  width: 5px !important;
+  background: linear-gradient(180deg, #FF0000, #FF0000) !important;
+  box-shadow: 0 0 16.5px rgba(255, 0, 0, 0.85) !important;
+}
+.container.rockg-alert--kicks-500 .rockg-frame::after {
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 0, 0, 0.12) 45%, transparent 90%) !important;
+}
+.container.rockg-alert--kicks-500 .rockg-media {
+  width: 110px !important;
+  height: 110px !important;
+  min-width: 110px !important;
+  max-width: 110px !important;
+}
+.container.rockg-alert--kicks-500 .alert-media {
+  width: 110px !important;
+  height: 110px !important;
+  border-color: #FF0000 !important;
+  box-shadow: 0 0 21.1px rgba(255, 0, 0, 0.35) !important;
+}
+.container.rockg-alert--kicks-500 .alert-media img,
+.container.rockg-alert--kicks-500 .rockg-media img {
+  width: 72px !important;
+  height: 72px !important;
+  min-width: 72px !important;
+  min-height: 72px !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
+}
+.container.rockg-alert--kicks-500 .rockg-tag { color: #FF0000 !important; }
+.container.rockg-alert--kicks-500 .rockg-line1 {
+  font-size: 18px !important;
+  text-shadow: 0 0 16.5px rgba(255, 255, 255, 0.3) !important;
+}
+.container.rockg-alert--kicks-500 .rockg-line2 {
+  font-size: 26px !important;
+  color: #FF0000 !important;
+  text-shadow: 0 0 19.5px rgba(255, 0, 0, 0.85) !important;
+  animation: rockgNameIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.42s both, rockgNameGlow 2s ease-in-out 1s infinite !important;
+}
+.container.rockg-alert--kicks-500 .rockg-amount-num {
+  font-size: 30px !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 0 23.1px rgba(255, 0, 0, 0.85) !important;
+}
+.container.rockg-alert--kicks-500 .rockg-amount-label {
+  font-size: 12px !important;
+  color: #FF0000 !important;
+}
+@keyframes rockgBorderPulseTier500 {
+  0%, 100% { box-shadow: 0 0 18.2px rgba(255, 0, 0, 0.35), inset 0 0 0 rgba(255, 0, 0, 0); }
+  50%      { box-shadow: 0 0 36.4px rgba(255, 0, 0, 0.85), inset 0 0 18px rgba(255, 215, 0, 0.08); }
+}
