@@ -1,8 +1,33 @@
-# Alertas RockG — Botrix + KICK
+# Alertas RocKG — Ejemplo para Botrix + KICK
 
-Pack de alertas personalizadas para **xRockGx**, basadas en la identidad visual de `E:\Imagenes\RockG`.
+Pack de alertas personalizadas para streaming en **KICK**, usando [Botrix](https://botrix.live) con HTML, CSS y JavaScript custom. Este repositorio es un **ejemplo público** de cómo montar un set de alertas con identidad visual propia: marco angular, tipografía bold italic, paleta rojo/negro/dorado y animaciones listas para OBS.
 
-## Identidad visual detectada
+Diseñado para el canal **xRockGx** (RocKG), pero pensado para que cualquiera pueda ver el código, previsualizarlo en el navegador y adaptarlo a su propio canal.
+
+---
+
+## Qué incluye
+
+| Tipo de alerta | Carpeta | Título en pantalla |
+|----------------|---------|-------------------|
+| Seguidores | `botrix/follow/` | ¡NUEVO SEGUIDOR! |
+| Suscripción | `botrix/sub/` | ¡NUEVA SUB! |
+| Sub regalada | `botrix/gift/` | ¡REGALÓ SUBS! |
+| Host | `botrix/host/` | ¡NUEVO HOST! |
+| Propina | `botrix/tip/` | ¡DONACIÓN! |
+| KICKs | `botrix/kicks/` | ¡KICKS RECIBIDOS! |
+
+Cada alerta tiene tres archivos listos para pegar en Botrix:
+
+- `html.html` — estructura y variables
+- `css.css` — estilos (marco, colores, animaciones)
+- `js.js` — lógica mínima de la alerta
+
+También hay archivos `.html` combinados en `botrix/` (por si prefieres copiar todo de una vez) y **previews locales** para ver el diseño sin conectar Botrix.
+
+---
+
+## Identidad visual
 
 | Elemento | Valor |
 |----------|-------|
@@ -10,137 +35,148 @@ Pack de alertas personalizadas para **xRockGx**, basadas en la identidad visual 
 | Fondo | Negro `#0A0A0A` con textura grain |
 | Texto | Blanco `#FFFFFF`, bold italic |
 | Acento sub/GG | Dorado `#FFD700` |
-| Formas | Rayos angulares 3D (como banner Offline y Kick) |
-| Logo | Monograma RG circular con anillo rojo |
-| Mascota | Chibi con gafas, pelo rojo oscuro, camisa roja |
-| Tipografía | Montserrat Black Italic (similar al banner) |
+| Formas | Rayos angulares 3D |
+| Tipografía | [Montserrat Black Italic](https://fonts.google.com/specimen/Montserrat) |
 
-## Estructura del proyecto
+Las imágenes de cada alerta (emotes, logo, mascota) se suben desde el panel de Botrix; no van en el repositorio.
 
-```
-alertas-rockg/
-├── assets/          → Emotes e imágenes copiadas para referencia
-├── botrix/          → Código separado por pestaña de Botrix
-│   ├── follow/  → Seguidores
-│   ├── sub/     → Suscripción
-│   ├── gift/    → Sub regalada
-│   ├── host/    → Host
-│   ├── tip/     → Propina
-│   └── kicks/   → KICKs
-└── previews/
-    └── todas-las-alertas.html   → Abrir en navegador para ver el diseño
-```
+---
 
-## Mapa pestaña Botrix → carpeta
-
-| Pestaña Botrix | Carpeta | Imagen sugerida | Título en alerta |
-|----------------|---------|-----------------|------------------|
-| **Seguidores** | `botrix/follow/` | `RockLove.png` | ¡NUEVO SEGUIDOR! |
-| **Suscripción** | `botrix/sub/` | `RockGG.png` | ¡NUEVA SUB! |
-| **Sub regalada** | `botrix/gift/` | `RockGallo.png` | ¡REGALÓ SUBS! |
-| **Host** | `botrix/host/` | `LogoPNG.png` | ¡NUEVO HOST! |
-| **Propina** | `botrix/tip/` | `LogoPNG.png` | ¡DONACIÓN! |
-| **KICKs** | `botrix/kicks/` | `RockGG.png` | ¡KICKS RECIBIDOS! |
-
-Imágenes originales en: `E:\Imagenes\RockG\Comisiones Rock\` y `E:\Imagenes\RockG\Logo\`
-
-## Cómo instalar en Botrix (pestañas separadas)
-
-1. Entra en [botrix.live](https://botrix.live) → Login with Kick
-2. Asegúrate de que **botrixlive** sea moderador en tu canal Kick
-3. Ve a **Settings** → tu canal Kick → **Alerts** → elige la pestaña (Seguidores, Suscripción, etc.)
-4. Sube la imagen (`RockLove.png`) con el botón verde de upload
-5. En el panel de Botrix, **deja el campo de texto vacío** o con un guión `-` (el título ya va fijo en el HTML). **No uses `{name}` en el texto del panel** — el nombre sale solo del HTML.
-6. Abre **Custom Code** y pega en cada pestaña:
-
-| Pestaña Botrix | Archivo a copiar |
-|----------------|------------------|
-| **Html** | `botrix/follow/html.html` |
-| **CSS** | `botrix/follow/css.css` |
-| **JavaScript** | `botrix/follow/js.js` |
-| **Campos personalizados** | no tocar |
-
-7. Pulsa **Exportar esta Alerta** y usa **Test Alert** para probar
-8. Copia la **Widget URL** → OBS → Browser Source (800×250 px)
-
-Repite los pasos 3–8 para **Suscripción**, **Sub regalada**, **Host**, **Propina** y **KICKs** usando su carpeta del mapa de arriba.
-
-### Variables de Botrix (usar exactamente así)
+## Estructura del repositorio
 
 ```
-{name}     → nombre del viewer
-{text}     → texto principal
-{message}  → mensaje extra
-{amount}   → cantidad (subs regalados, propina, espectadores en host, KICKs)
-{img}      → imagen/GIF (usa {img} dentro de .alert-media, NO {image})
-{sound}    → sonido (se configura en el panel)
-{animation} → animación del nombre (en #line2)
-{disposition} → layout (en .container)
-{transition}  → transición (en .container)
+Alertas-RocKG/
+├── botrix/
+│   ├── follow/          # Seguidores
+│   ├── sub/             # Suscripción
+│   ├── gift/            # Sub regalada
+│   ├── host/            # Host
+│   ├── tip/             # Propina
+│   ├── kicks/           # KICKs
+│   └── *.html           # Versión combinada por tipo (referencia)
+├── previews/
+│   ├── todas-las-alertas.html   # Galería con todas las alertas
+│   ├── preview-theme.css
+│   └── preview-helper.js
+└── obs-custom-css.txt   # CSS para fuente Browser en OBS
 ```
 
-## Configuración en Botrix (importante)
+---
 
-Con custom code activo, ajusta el panel así para evitar conflictos:
+## Preview local (sin Botrix)
 
-| Ajuste | Valor recomendado |
-|--------|-------------------|
-| **Provisión / Disposición** | Imagen a la izquierda, texto a la derecha |
-| **Animación de entrada** | Fade o Slide (no Zoom si se ve raro) |
-| **Duración** | 6 segundos |
-| **Fuente / color del panel** | Da igual — el CSS custom lo sobreescribe |
-| **Imagen** | Sube RockLove.png (Botrix la inserta vía `{img}`) |
+Abre en tu navegador:
 
-## Configuración OBS (importante)
+```
+previews/todas-las-alertas.html
+```
+
+Verás las seis alertas con datos de ejemplo. Cada una también tiene su `preview.html` dentro de su carpeta (`botrix/follow/preview.html`, etc.).
+
+---
+
+## Instalación en Botrix
+
+### Requisitos
+
+1. Cuenta en [botrix.live](https://botrix.live) → **Login with Kick**
+2. El bot **botrixlive** debe ser moderador en tu canal KICK
+
+### Pasos (repetir por cada tipo de alerta)
+
+1. **Settings** → tu canal → **Alerts** → elige la pestaña (Seguidores, Suscripción, etc.)
+2. Sube la imagen que quieras mostrar (botón verde de upload en Botrix)
+3. En el panel de texto, **déjalo vacío** o pon un guión `-`. El título ya va en el HTML; el nombre sale de `{name}`. **No pongas `{name}` en el campo de texto del panel** o se duplicará.
+4. Abre **Custom Code** y pega el contenido de la carpeta correspondiente:
+
+| Campo en Botrix | Archivo |
+|-----------------|---------|
+| Html | `html.html` |
+| CSS | `css.css` |
+| JavaScript | `js.js` |
+| Campos personalizados | no tocar |
+
+5. Pulsa **Exportar esta Alerta** y usa **Test Alert**
+6. Copia la **Widget URL** → OBS → **Browser Source** (800×200 px recomendado)
+
+### Variables de Botrix
+
+Usar exactamente así en el HTML:
+
+```
+{name}        → nombre del viewer
+{text}        → texto principal
+{message}     → mensaje extra
+{amount}      → cantidad (subs regalados, propina, host, KICKs)
+{img}         → imagen/GIF (dentro de .alert-media; NO usar {image})
+{sound}       → sonido (panel de Botrix)
+{animation}   → animación del nombre (#line2 / .rockg-line2)
+{disposition} → layout (.container)
+{transition}  → transición (.container)
+```
+
+### Ajustes recomendados en el panel
+
+| Ajuste | Valor |
+|--------|-------|
+| Disposición | Imagen a la izquierda, texto a la derecha |
+| Animación de entrada | Fade o Slide |
+| Duración | ~6 segundos |
+| Fuente/color del panel | Da igual — el CSS custom lo sobreescribe |
+
+---
+
+## Configuración en OBS
 
 | Campo | Valor |
 |-------|-------|
 | Ancho | **800** |
 | Alto | **200** |
 | FPS | 30 |
-| ✓ Actualizar navegador cuando la escena esté activa | Activado |
-| **CSS personalizado** | Pegar contenido de `obs-custom-css.txt` |
+| Actualizar navegador cuando la escena esté activa | ✓ |
+| CSS personalizado | Contenido de `obs-custom-css.txt` |
 
-Después de cambiar código en Botrix: clic derecho en la fuente OBS → **Actualizar**.
+Tras cambiar código en Botrix: clic derecho en la fuente → **Actualizar**.
 
-## Si se ve distinto / mal
+---
 
-1. **Vuelve a pegar** html.html, css.css y js.js (están corregidos para Botrix)
-2. Usa **`{img}`** no `{image}` en el HTML
-3. Pulsa **Exportar esta Alerta** en Botrix después de pegar
-4. En OBS añade el **CSS personalizado** de `obs-custom-css.txt`
-5. Tamaño OBS mínimo **800×200** (si es muy pequeño se recorta)
-6. **Test Alert** en Botrix primero — si ahí se ve bien pero en OBS no, el problema es OBS
-7. Si hay **doble imagen o texto**, desactiva estilos del panel y usa solo custom code
-8. Si el **nombre sale repetido**, vacía el campo de texto del panel de Botrix (no pongas `{name}` ahí) y vuelve a pegar html + js
+## Adaptar a tu canal
 
-## Ver preview local
+Este repo es un punto de partida. Para personalizarlo:
 
-Abre en tu navegador:
+1. **Colores** — Edita las variables CSS en cada `css.css` (`--rock-red`, `--rock-black`, etc.)
+2. **Textos** — Cambia los títulos en `html.html` (`.rockg-line1`, `.rockg-tag`)
+3. **Imágenes** — Súbelas en Botrix; no hace falta tocar rutas en el código
+4. **Animaciones** — Ajusta keyframes y duraciones en `css.css`
+5. **Sonidos** — Configúralos en el panel de Botrix por alerta
 
-```
-alertas-rockg/previews/todas-las-alertas.html
-```
+Haz fork del repo, cambia lo que necesites y repite la instalación pestaña por pestaña.
 
-## Configuración OBS recomendada
+---
 
-| Fuente | Tamaño | Posición |
-|--------|--------|----------|
-| Alertas (todas las pestañas) | 800 × 250 | Centro-superior del overlay |
-| Una sola URL por tipo | — | Una Browser Source por alerta |
+## Solución de problemas
 
-## Sonidos sugeridos
+| Problema | Qué hacer |
+|----------|-----------|
+| Se ve distinto en OBS vs Botrix | Pega de nuevo html + css + js, exporta la alerta y añade `obs-custom-css.txt` en OBS |
+| Doble imagen o texto | Vacía el campo de texto del panel; usa solo custom code |
+| Nombre repetido | No uses `{name}` en el panel de Botrix, solo en el HTML |
+| Imagen no carga | Usa `{img}`, no `{image}` |
+| Recorte en OBS | Browser Source mínimo **800×200** |
+| Fuente distinta | Si Google Fonts no carga en Botrix, el fallback es Arial Black |
 
-Puedes subir un sonido propio en Botrix. Ideas según tu estilo:
-- Follow: impacto corto + whoosh (como transición `TransicionRock.mov`)
-- Sub: fanfare corto o "GG" sound
-- Gift: celebración / confetti
-- Tip: cash register o campana
-- Host: whoosh + impacto (entrada de audiencia)
-- KICKs: sonido corto de moneda o fanfare
+Si **Test Alert** en Botrix se ve bien pero OBS no, el problema suele ser el tamaño de la fuente o el CSS personalizado de OBS.
 
-## Notas
+---
 
-- Las variables Botrix `{name}`, `{text}`, `{message}`, `{amount}`, `{img}` se reemplazan automáticamente en stream
-- No uses rutas locales (`E:\...`) en el código; las imágenes se suben desde el panel de Botrix
-- Si el custom code no carga la fuente Google, Botrix usará Arial Black como fallback (similar)
+## Licencia y uso
+
+Proyecto de ejemplo publicado como referencia. Puedes estudiarlo, hacer fork y adaptarlo a tu stream. Si lo usas o lo modificas, un crédito al repo original se agradece, pero no es obligatorio.
+
+---
+
+## Créditos
+
+- Canal de referencia: **xRockGx** / RocKG
+- Plataforma de alertas: [Botrix](https://botrix.live)
+- Streaming: [KICK](https://kick.com)
